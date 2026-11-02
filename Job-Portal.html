@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CareerConnect</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            margin: 0;
+            background-color: rgb(225, 241, 246);
+        }
+
+        .home {
+            text-align: center;
+            padding: 10px;
+            background-color: rgb(23, 54, 93);
+            color: white;
+        }
+
+        .home h1 {
+            font-size: 38px;
+        }
+
+        .home p {
+            font-size: 18px;
+        }
+
+        .jobs {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .filter {
+            margin: 20px;
+        }
+
+        select, input, textarea {
+            padding: 10px;
+            margin: 8px;
+            width: 800px;
+            max-width: 400px;
+        }
+
+        .job-card {
+            background-color: white;
+            width: 280px;
+            padding: 20px;
+            margin: 15px auto;
+            text-align: left;
+            border-radius: 8px;
+        }
+
+        .job-card h3 {
+            color: rgb(23, 54, 93);
+        }
+
+        button {
+            background-color: rgb(23, 54, 93);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .application {
+            background-color: rgb(222, 235, 247);
+            padding: 20px;
+            text-align: center;
+            display: none;
+        }
+
+        form {
+            background-color: white;
+            padding: 25px;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 8px;
+        }
+
+        form label {
+            margin-top: 10px;
+        }
+
+        #message {
+            font-weight: bold;
+            margin: 10px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <section class="home">
+
+        <h1>Welcome to CareerConnect</h1>
+
+        <p>Explore job opportunities from different companies.</p>
+
+        <p>Find the right job according to your skills and qualification.</p>
+
+    </section>
+
+    <section class="jobs">
+
+        <h2>Available Jobs</h2>
+
+        <div class="filter">
+
+            <label>Select Category:</label>
+
+            <select id="category">
+                <option value="All">All Categories</option>
+                <option value="IT">IT</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Finance">Finance</option>
+                <option value="Design">Design</option>
+            </select>
+
+        </div>
+
+        <div class="job-card">
+
+            <h3>Web Developer</h3>
+            <p><b>Company:</b> Tech Solutions</p>
+            <p><b>Location:</b> Delhi</p>
+            <p><b>Category:</b> IT</p>
+            <p><b>Eligibility:</b> B.Tech / BCA</p>
+            <p><b>Deadline:</b> 15-11-2026</p>
+
+            <button onclick="apply('Web Developer')">
+                Apply Now
+            </button>
+
+        </div>
+
+        <div class="job-card">
+
+            <h3>Software Engineer</h3>
+            <p><b>Company:</b> Infosys</p>
+            <p><b>Location:</b> Noida</p>
+            <p><b>Category:</b> IT</p>
+            <p><b>Eligibility:</b> B.Tech / B.E.</p>
+            <p><b>Deadline:</b> 20-11-2026</p>
+
+            <button onclick="apply('Software Engineer')">
+                Apply Now
+            </button>
+
+        </div>
+
+        <div class="job-card">
+
+            <h3>Marketing Executive</h3>
+            <p><b>Company:</b> Bright Media</p>
+            <p><b>Location:</b> Gurugram</p>
+            <p><b>Category:</b> Marketing</p>
+            <p><b>Eligibility:</b> Graduate</p>
+            <p><b>Deadline:</b> 25-11-2026</p>
+
+            <button onclick="apply('Marketing Executive')">
+                Apply Now
+            </button>
+
+        </div>
+
+        <div class="job-card">
+
+            <h3>Financial Analyst</h3>
+            <p><b>Company:</b> HDFC Bank</p>
+            <p><b>Location:</b> Mumbai</p>
+            <p><b>Category:</b> Finance</p>
+            <p><b>Eligibility:</b> B.Com / BBA</p>
+            <p><b>Deadline:</b> 18-11-2026</p>
+
+            <button onclick="apply('Financial Analyst')">
+                Apply Now
+            </button>
+
+        </div>
+
+        <div class="job-card">
+
+            <h3>UI/UX Designer</h3>
+            <p><b>Company:</b> Creative Minds</p>
+            <p><b>Location:</b> Delhi</p>
+            <p><b>Category:</b> Design</p>
+            <p><b>Eligibility:</b> Graduate</p>
+            <p><b>Deadline:</b> 28-11-2026</p>
+
+            <button onclick="apply('UI/UX Designer')">
+                Apply Now
+            </button>
+
+        </div>
+
+    </section>
+
+    <section class="application" id="application">
+
+        <h2>Job Application Form</h2>
+
+        <form id="myForm">
+
+            <label>Selected Job</label>
+            <br>
+            <input type="text" id="job" readonly required>
+            <br><br>
+
+            <label>Full Name</label>
+            <br>
+            <input type="text" id="name"
+            placeholder="Enter your name" required>
+            <br><br>
+
+            <label>Email</label>
+            <br>
+            <input type="email" id="email"
+            placeholder="Enter your email" required>
+            <br><br>
+
+            <label>Phone Number</label>
+            <br>
+            <input type="text" id="phone"
+            placeholder="Enter 10 digit number"
+            maxlength="10" required>
+            <br><br>
+
+            <label>Qualification</label>
+            <br>
+
+            <select id="qualification" required>
+                <option value="">Select Qualification</option>
+                <option>12th Pass</option>
+                <option>Diploma</option>
+                <option>Graduate</option>
+                <option>Post Graduate</option>
+            </select>
+
+            <br><br>
+
+            <label>Resume Link</label>
+            <br>
+            <input type="url" id="resume"
+            placeholder="Enter resume link">
+            <br><br>
+
+            <label>Why should we hire you?</label>
+            <br>
+
+            <textarea id="reason" rows="4"
+            placeholder="Write about yourself" required></textarea>
+
+            <br><br>
+
+            <button type="submit">Submit Application</button>
+
+        </form>
+
+        <p id="message"></p>
+
+    </section>
+
+    <script>
+
+        
+
+        function apply(jobName) {
+
+            var job = document.getElementById("job");
+            var application = document.getElementById("application");
+            var message = document.getElementById("message");
+
+            job.value = jobName;
+
+            application.style.display = "block";
+
+            message.innerHTML = "";
+
+            application.scrollIntoView();
+
+        }
+
+
+        var category = document.getElementById("category");
+
+        category.onchange = function() {
+
+            var cards = document.getElementsByClassName("job-card");
+
+            var selected = category.value;
+
+            for (var i = 0; i < cards.length; i++) {
+
+                var text = cards[i].innerText;
+
+                if (selected == "All" || text.includes(selected)) {
+
+                    cards[i].style.display = "block";
+
+                }
+
+                else {
+
+                    cards[i].style.display = "none";
+
+                }
+
+            }
+
+        };
+
+
+        var form = document.getElementById("myForm");
+
+        form.onsubmit = function(event) {
+
+            event.preventDefault();
+
+            var name = document.getElementById("name").value.trim();
+
+            var email = document.getElementById("email").value.trim();
+
+            var phone = document.getElementById("phone").value.trim();
+
+            var qualification = document.getElementById("qualification").value;
+
+            var reason = document.getElementById("reason").value.trim();
+
+            var message = document.getElementById("message");
+
+
+            if (name.length < 3) {
+
+                message.style.color = "red";
+                message.innerHTML = "Enter a valid name!";
+
+            }
+
+            else if (!email.includes("@") || !email.includes(".")) {
+
+                message.style.color = "red";
+                message.innerHTML = "Enter a valid email!";
+
+            }
+
+            else if (phone.length != 10 || isNaN(phone)) {
+
+                message.style.color = "red";
+                message.innerHTML = "Enter a valid 10 digit phone number!";
+
+            }
+
+            else if (qualification == "") {
+
+                message.style.color = "red";
+                message.innerHTML = "Select your qualification!";
+
+            }
+
+            else if (reason.length < 10) {
+
+                message.style.color = "red";
+                message.innerHTML = "Write at least 10 characters!";
+
+            }
+
+            else {
+
+                message.style.color = "green";
+
+                message.innerHTML =
+                "Application Submitted Successfully! Thank you, " + name;
+
+                alert("Application Submitted Successfully!");
+
+                form.reset();
+
+            }
+
+        };
+
+    </script>
+
+</body>
+
+</html>
